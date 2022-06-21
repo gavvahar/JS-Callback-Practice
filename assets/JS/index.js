@@ -6,6 +6,28 @@ let direction = null;
 let x = 100;
 let y = 250;
 
+document.addEventListener("keydown", function (e) {
+  if (e.repeat) return;
+  switch (e.key) {
+    case "ArrowLeft":
+      direction = "west";
+      break;
+    case "ArrowUp":
+      direction = "north";
+      break;
+    case "ArrowRight":
+      direction = "east";
+      break;
+    case "ArrowDown":
+      direction = "south";
+      break;
+  }
+});
+
+document.addEventListener("keyup", function (e) {
+  direction = null;
+});
+
 setInterval(function () {
   switch (direction) {
     case "west":
