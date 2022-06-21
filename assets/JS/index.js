@@ -2,6 +2,29 @@ const inventory = newInventory();
 move(inventory).to(0, 0);
 
 const character = newImage("assets/GIF/green-character/static.gif");
+let direction = null;
+let x = 100;
+let y = 250;
+
+function moveCharacter() {
+  switch (direction) {
+    case "west":
+      x = x - 1;
+      break;
+    case "north":
+      y = y + 1;
+      break;
+    case "east":
+      x = x + 1;
+      break;
+    case "south":
+      y = y - 1;
+      break;
+  }
+  character.style.left = x + "px";
+  character.style.bottom = y + "px";
+}
+
 move(character).to(100, 250);
 
 move(newImage("assets/PNG/tree.png")).to(200, 450);
