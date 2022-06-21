@@ -3,8 +3,27 @@ move(inventory).to(0, 0);
 
 const character = newImage("assets/GIF/green-character/static.gif");
 
-move(character).withArrowKeys(100, 250);
+function handleDirectionChange(direction) {
+  switch (direction) {
+    default:
+      character.src = "assets/GIF/green-character/static.gif";
+      break;
+    case "west":
+      character.src = "assets/GIF/green-character/west.gif";
+      break;
+    case "north":
+      character.src = "assets/GIF/green-character/north.gif";
+      break;
+    case "east":
+      character.src = "assets/GIF/green-character/east.gif";
+      break;
+    case "south":
+      character.src = "assets/GIF/green-character/south.gif";
+      break;
+  }
+}
 
+move(character).withArrowKeys(100, 250, handleDirectionChange);
 move(newImage("assets/PNG/tree.png")).to(200, 450);
 move(newImage("assets/PNG/pillar.png")).to(350, 250);
 move(newImage("assets/PNG/pine-tree.png")).to(450, 350);
