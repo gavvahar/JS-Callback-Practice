@@ -6,7 +6,7 @@ let direction = null;
 let x = 100;
 let y = 250;
 
-function moveCharacter() {
+setInterval(function () {
   switch (direction) {
     case "west":
       x = x - 1;
@@ -23,8 +23,8 @@ function moveCharacter() {
   }
   character.style.left = x + "px";
   character.style.bottom = y + "px";
-}
-setInterval(moveCharacter, 1);
+}, 1);
+
 move(character).to(100, 250);
 
 move(newImage("assets/PNG/tree.png")).to(200, 450);
