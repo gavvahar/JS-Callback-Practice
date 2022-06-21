@@ -23,7 +23,7 @@ function handleDirectionChange(direction) {
   }
 }
 
-move(character).withArrowKeys(100, 250, handleDirectionChange);
+move(character).withArrowKeys(100, 250, 100, 375, handleDirectionChange);
 move(newImage("assets/PNG/tree.png")).to(200, 450);
 move(newImage("assets/PNG/pillar.png")).to(350, 250);
 move(newImage("assets/PNG/pine-tree.png")).to(450, 350);
